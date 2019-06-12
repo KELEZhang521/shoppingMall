@@ -2,6 +2,9 @@
 
 > A Vue.js project
 
+## 项目介绍
+一个网上商城的vue项目  
+技术栈 Vue+ Vuex +Vue-router+axios+ mockjs + vant
 ## Build Setup
 
 ``` bash
