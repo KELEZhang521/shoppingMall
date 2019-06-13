@@ -5,6 +5,7 @@
       left-text="返回"
       right-text="按钮"
       left-arrow
+      @click-left="goBack"
       >
         <div class="search-wrapper" slot="title">
           <van-icon name="search"></van-icon>
@@ -15,73 +16,10 @@
     <div class="side-nav-wrapper">
      <div class="side-nav-left">
        <ul>
-         <li class="goods-class border" :class="[]" v-for="index in 20" :key="index" @click="choosedClass()">商品类别</li>
+         <li class="goods-class border" v-for="index in 20" :key="index" @click="choosedClass()">商品类别</li>
        </ul>
      </div>
      <div class="side-nav-right">
-       <div class="goods-wrapper">
-         <h4>时尚服装</h4>
-         <ul class="goods-content-wrapper">
-           <li class="goods-content">
-            <div class="goods-img-wrapper"> <img class="goods-img" src="/static/images/goodsclass/1.jpg" alt=""></div>
-            <div class="goods-info-wrapper"><span class="good-info">男装</span></div>
-           </li>
-           <li class="goods-content">
-            <div class="goods-img-wrapper"> <img class="goods-img" src="/static/images/goodsclass/1.jpg" alt=""></div>
-            <div class="goods-info-wrapper"><span class="good-info">男装</span></div>
-           </li>
-           <li class="goods-content">
-            <div class="goods-img-wrapper"> <img class="goods-img" src="/static/images/goodsclass/1.jpg" alt=""></div>
-            <div class="goods-info-wrapper"><span class="good-info">男装</span></div>
-           </li>
-           <li class="goods-content">
-            <div class="goods-img-wrapper"> <img class="goods-img" src="/static/images/goodsclass/1.jpg" alt=""></div>
-            <div class="goods-info-wrapper"><span class="good-info">男装</span></div>
-           </li>
-         </ul>
-       </div>
-       <div class="goods-wrapper">
-         <h4>时尚服装</h4>
-         <ul class="goods-content-wrapper">
-           <li class="goods-content">
-            <div class="goods-img-wrapper"> <img class="goods-img" src="/static/images/goodsclass/1.jpg" alt=""></div>
-            <div class="goods-info-wrapper"><span class="good-info">男装</span></div>
-           </li>
-           <li class="goods-content">
-            <div class="goods-img-wrapper"> <img class="goods-img" src="/static/images/goodsclass/1.jpg" alt=""></div>
-            <div class="goods-info-wrapper"><span class="good-info">男装</span></div>
-           </li>
-           <li class="goods-content">
-            <div class="goods-img-wrapper"> <img class="goods-img" src="/static/images/goodsclass/1.jpg" alt=""></div>
-            <div class="goods-info-wrapper"><span class="good-info">男装</span></div>
-           </li>
-           <li class="goods-content">
-            <div class="goods-img-wrapper"> <img class="goods-img" src="/static/images/goodsclass/1.jpg" alt=""></div>
-            <div class="goods-info-wrapper"><span class="good-info">男装</span></div>
-           </li>
-         </ul>
-       </div>
-       <div class="goods-wrapper">
-         <h4>时尚服装</h4>
-         <ul class="goods-content-wrapper">
-           <li class="goods-content">
-            <div class="goods-img-wrapper"> <img class="goods-img" src="/static/images/goodsclass/1.jpg" alt=""></div>
-            <div class="goods-info-wrapper"><span class="good-info">男装</span></div>
-           </li>
-           <li class="goods-content">
-            <div class="goods-img-wrapper"> <img class="goods-img" src="/static/images/goodsclass/1.jpg" alt=""></div>
-            <div class="goods-info-wrapper"><span class="good-info">男装</span></div>
-           </li>
-           <li class="goods-content">
-            <div class="goods-img-wrapper"> <img class="goods-img" src="/static/images/goodsclass/1.jpg" alt=""></div>
-            <div class="goods-info-wrapper"><span class="good-info">男装</span></div>
-           </li>
-           <li class="goods-content">
-            <div class="goods-img-wrapper"> <img class="goods-img" src="/static/images/goodsclass/1.jpg" alt=""></div>
-            <div class="goods-info-wrapper"><span class="good-info">男装</span></div>
-           </li>
-         </ul>
-       </div>
        <div class="goods-wrapper">
          <h4>时尚服装</h4>
          <ul class="goods-content-wrapper">
@@ -114,30 +52,7 @@ export default {
   data () {
     return {
       choosedClass: false,
-      activeKey: 1,
-      items: [
-        {
-          // 导航名称
-          text: '手机电脑',
-          // 该导航下所有的可选项
-          children: [
-            {
-              // 名称
-              text: '小米',
-              // id，作为匹配选中状态的标识
-              id: 1
-            },
-            {
-              text: '华为',
-              id: 2
-            },
-            {
-              text: '华为',
-              id: 2
-            }
-          ]
-        }
-      ]
+      activeKey: 1
     }
   },
 
@@ -147,7 +62,13 @@ export default {
 
   mounted () {},
 
-  methods: {}
+  methods: {
+    goBack () {
+      this.$router.push({
+        path: '/home'
+      })
+    }
+  }
 }
 
 </script>

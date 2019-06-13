@@ -6,7 +6,7 @@
         <van-tabbar-item icon="wap-nav" @click="goHome">首页</van-tabbar-item>
         <van-tabbar-item icon="apps-o" @click="goClass">分类</van-tabbar-item>
         <van-tabbar-item icon="shopping-cart" @click="goCart">购物车</van-tabbar-item>
-        <van-tabbar-item icon="manager">我的</van-tabbar-item>
+        <van-tabbar-item icon="manager" @click="goUser">我的</van-tabbar-item>
       </van-tabbar>
     </div>
   </div>
@@ -48,6 +48,11 @@ export default {
           path: '/login'
         })
       }
+    },
+    goUser () {
+      this.$router.push({
+        path: '/user'
+      })
     }
   }
 }

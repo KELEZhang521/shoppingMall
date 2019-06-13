@@ -1,8 +1,9 @@
 <template>
   <div class="wrapper" @scroll="event1">
     <div class="nav-bar" :class="[colorTag ? transformColor1: transformColor2]">
-      <van-nav-bar class="bar-content" left-text="返回" left-arrow>
-        <span slot="right">登陆</span>
+      <van-nav-bar class="bar-content" left-arrow>
+        <span class="login" slot="right">登陆</span>
+        <van-icon class="erweima" name="scan" slot="left" />
         <div slot="title" class="search-input">搜索商品</div>
       </van-nav-bar>
     </div>
@@ -152,15 +153,18 @@ export default {
     z-index 10
     .bar-content
       background-color rgba(255,255,255,.1)
-    .search-input
-      height .46rem
-      box-sizing border-box
-      border 1px solid #cccccc
-      border-radius .2rem
-      background-color #fff
-    .login
-      padding-left .2rem
-      color #fff
+      .erweima
+        font-size .28rem
+      .search-input
+        height .46rem
+        box-sizing border-box
+        border 1px solid #cccccc
+        border-radius .2rem
+        background-color #fff
+      .login
+        padding-left .2rem
+        color #fff
+        font-size .23rem
   .content
     height 5rem
     background-color #fff
